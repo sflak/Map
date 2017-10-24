@@ -1,0 +1,130 @@
+<!-- Sydney Flak
+sflak1@my.smccd.edu
+CIS 114
+map.html
+Final Exam
+5/27/16 -->
+
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+  <link rel="stylesheet" href="css/map.css">
+  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDJAcxuEg3vezsUKlXz5Zab46LzJFJhnWk  
+  &callback=initialize"></script>
+
+
+
+
+  <title>Sydney Flak</title>
+
+</head>
+<body>
+
+  <h1>A Few San Francisco Starbucks</h1>
+
+  <div id="map">
+  </div>
+
+  <script>
+
+    var map;
+
+    function initialize(){
+
+      console.log("hello");
+      var star1 = {lat: 37.7759097, lng: -122.4480316};
+      var star2 = {lat: 37.779933, lng: -122.4335079};
+      var star3 = {lat: 37.7667408, lng: -122.4357476};
+      var star4 = {lat: 37.7596109, lng: -122.4325336};
+      var star5 = {lat: 37.7764157, lng: -122.4369274};
+      var info = {
+        1: '<div id="content">' + '<p>1799 Fulton St, San Francisco</p>' + '<img src="images/star1.jpg">',
+        2: '<div id="content">' + '<p>Safeway, 1335 Webster St</p>' + '<img src="images/star2.jpg">',
+        3: '<div id="content">' + '<p>Safeway, 2020 Market St</p>' + '<img src="images/star3.jpg">',
+        4: '<div id="content">' + '<p>4094 18th St</p>' + '<img src="images/star4.jpg">',
+        5: '<div id="content">' + '<p>107, Essex Fox Plaza, 1390 Market St</p>'+ '<img src="images/star5.jpg">'
+
+      }
+
+      map = new google.maps.Map(document.getElementById('map'), {
+          center: star3,
+          zoom: 13
+      });
+      var infowindow1 = new google.maps.InfoWindow({
+          content: info[1]
+      });
+      var infowindow2 = new google.maps.InfoWindow({
+          content: info[2]
+      });
+      var infowindow3 = new google.maps.InfoWindow({
+          content: info[3]
+      });
+      var infowindow4 = new google.maps.InfoWindow({
+          content: info[4]
+      });
+      var infowindow5 = new google.maps.InfoWindow({
+          content: info[5]
+      });
+      var marker1 = new google.maps.Marker({
+        position: star1,
+        map: map,
+        title: 'Hello World!'
+      });
+      marker1.addListener('click', function() {
+        infowindow1.open(map, marker1);
+      });
+
+      var marker2 = new google.maps.Marker({
+        position: star2,
+        map: map,
+        title: 'Hello World!'
+      });
+      marker2.addListener('click', function() {
+        infowindow2.open(map, marker2);
+        console.log("star2");
+      });
+      var marker3 = new google.maps.Marker({
+        position: star3,
+        map: map,
+        title: 'Hello World!'
+      });
+      marker3.addListener('click', function() {
+        infowindow3.open(map, marker3);
+        console.log("star3");
+      });
+      var marker4 = new google.maps.Marker({
+        position: star4,
+        map: map,
+        title: 'Hello World!'
+      });
+      marker4.addListener('click', function() {
+        infowindow4.open(map, marker4);
+        console.log("star4");
+      });
+      var marker5 = new google.maps.Marker({
+        position: star5,
+        map: map,
+        title: 'Hello World!'
+      });
+      marker5.addListener('click', function() {
+        infowindow5.open(map, marker5);
+        console.log("star5");
+      });
+    }
+
+  </script>
+
+<!-- <script src="js/map.js"></script>
+ -->
+
+</body>
+</html>
+
+ 

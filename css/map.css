@@ -1,0 +1,20 @@
+/*Sydney Flak
+sflak1@my.smccd.edu
+CIS 114
+map.css
+Final Exam
+5/27/16*/
+
+
+h1{
+	text-align: center;
+}
+#map {
+
+	width: 500px;
+	height: 500px;
+	margin: 0 auto;
+}
+img {
+	width: 100px;
+}
